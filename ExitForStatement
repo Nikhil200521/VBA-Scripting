@@ -1,0 +1,14 @@
+// Exit for statement is used if we wantt to exit the for loop earlier , like we use a break statemnent in C/C++ language. 
+Public Sub ExitForStatement()
+    Dim x As Integer
+    
+    For x = 2 To 50
+        Range("B" & x).Select
+        If Range("B" & x).Value = "Stop" Then
+             Exit For
+        ElseIf Range("B" & x).Value = "" Then
+             Range("B" & x).Value = "info"
+        End If
+    Next x
+    
+End Sub
