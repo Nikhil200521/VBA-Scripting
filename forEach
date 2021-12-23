@@ -1,0 +1,9 @@
+Public Sub foreach()
+    
+   Dim ax As Worksheet
+   
+   For Each x In Worksheets
+    MsgBox " found : & x.name"
+   Next x
+    
+End Sub
