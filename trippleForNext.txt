@@ -1,0 +1,17 @@
+Public Sub trippleForNext()
+    
+    Dim x, y, z As Integer
+    For z = 3 To 5
+        Worksheets(z).Select
+        For x = 1 To 10
+            For y = 1 To 10
+                Cells(x, y).Value = 10
+            Next y
+            
+        Next x
+         
+         
+    Next z
+    
+        
+End Sub
