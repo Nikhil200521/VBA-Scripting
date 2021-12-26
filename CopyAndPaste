@@ -1,0 +1,33 @@
+'CopyAndPaste
+
+
+  Public Sub try()
+    Dim numSheet As Integer
+    numSheet = Worksheets.Count
+    numSheet = numSheet - 1
+    Dim x As Integer
+    Dim sheetName As String
+    
+    
+    For x = 1 To numSheet
+        Worksheets(x).Select
+        sheetName = ActiveSheet.Name
+        Worksheets("P&L").Select
+        Range("A3").Select
+        Selection.Offset(x * 5 + 4, 0).Select
+        Selection.Value = sheetName
+        Selection.Font.Bold = True
+        Worksheets(x).Select
+        Range("A1").CurrentRegion.Select
+        Selection.Copy
+        Worksheets("P&L").Select
+        Range("A3").Select
+        Selection.Offset(x * 5 + 4 + 1, 0).Select
+        Selection.PasteSpecial
+        
+    Next x
+            
+        Range("A2:a10", "A3:B3").Select
+        Selection.Delete
+      
+End Sub
